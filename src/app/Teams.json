@@ -1,0 +1,71 @@
+[
+  {
+    "name": "Real Madrid",
+    "picture": "/images/Real_Madrid.png"
+  },
+  {
+    "name": "Barcelona",
+    "picture": "/images/Barcelona.png"
+  },
+  {
+    "name": "Atletico Madrid",
+    "picture": "/images/Atletico_Madrid.png"
+  },
+
+  {
+    "name": "Napoli",
+    "picture": "/images/SSC_Neapel.png"
+  },
+  {
+    "name": "Inter Milan",
+    "picture": "/images/Internazionale_Milano.png"
+  },
+  {
+    "name": "Ac Milan",
+    "picture": "/images/AC_Milan.png"
+  },
+  {
+    "name": "Juventus",
+    "picture": "/images/Juventus.png"
+  },
+  {
+    "name": "Paris Saint German",
+    "picture": "/images/Paris_Saint-Germain.png"
+  },
+  {
+    "name": "Bayern Munchen",
+    "picture": "/images/Bayern_München.png"
+  },
+  {
+    "name": "Broussia Dortmond",
+    "picture": "/images/Borussia_Dortmund.png"
+  },
+  {
+    "name": "Manchester City",
+    "picture": "/images/Manchester_City.png"
+  },
+  {
+    "name": "Manchester United",
+    "picture": "/images/Manchester_United.png"
+  },
+  {
+    "name": "Arsenal",
+    "picture": "/images/Arsenal_FC.png"
+  },
+  {
+    "name": "Chelsea",
+    "picture": "/images/Chelsea.png"
+  },
+  {
+    "name": "Tottenham",
+    "picture": "/images/Tottenham_Hotspur.png"
+  },
+  {
+    "name": "Liverpool",
+    "picture": "/images/Liverpool_FC.png"
+  },
+  {
+    "name": "Roma",
+    "picture": "/images/AS_Roma_logo_(2017).svg.png"
+  }
+]

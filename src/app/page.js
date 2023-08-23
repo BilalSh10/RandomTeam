@@ -60,7 +60,7 @@ export default function Home() {
           className="flex flex-col items-center rounded-md gap-6"
           id="FirstTeam"
         >
-          <h1 className="bg-black w-40 p-1 text-center text-white rounded-md">
+          <h1 className="bg-black w-40 p-1 text-center text-white rounded-md text-sm">
             {firstTeam.name}
           </h1>
           {firstTeam !== "" ? (
@@ -68,7 +68,7 @@ export default function Home() {
               <Image
                 height="200"
                 width="200"
-                className="h-32 w-auto"
+                className="h-28 w-auto"
                 src={firstTeam.picture}
                 alt="FirstPic"
               />
@@ -86,12 +86,12 @@ export default function Home() {
           </button>
         </div>
         <div className="flex flex-row gap-4" id="Score">
-            <div className="font-bold text-2xl">{firstResult}</div>
+            <div className="font-bold text-xl">{firstResult}</div>
             <div> _ </div>
-            <div className="font-bold text-2xl">{secondResult}</div>
+            <div className="font-bold text-xl">{secondResult}</div>
         </div>
         <div className="flex flex-col items-center gap-6" id="SecondTeam">
-          <h1 className="bg-black w-40 text-center text-white rounded-md p-1">
+          <h1 className="bg-black w-40 text-center text-white rounded-md p-1 text-sm">
             {secondTeam.name}
           </h1>
           {secondTeam !== "" ? (
@@ -99,7 +99,7 @@ export default function Home() {
               <Image
                 height="200"
                 width="200"
-                className="h-32 w-auto"
+                className="h-28 w-auto"
                 src={secondTeam.picture}
                 alt="FirstPic"
               />

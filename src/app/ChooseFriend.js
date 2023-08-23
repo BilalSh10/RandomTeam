@@ -28,7 +28,7 @@ function ChooseFriend() {
 
   return (
     <div className="mt-16">
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-4">
         <input className="border-black border rounded-md text-black pl-4 p-1" type="text" onChange={(event) => setInputValue1(event.target.value)} />
         <input className="border-black border rounded-md text-black pl-4 p-1" type="text" onChange={(event) => setInputValue2(event.target.value)} />
         <input className="border-black border rounded-md text-black pl-4 p-1" type="text" onChange={(event) => setInputValue3(event.target.value)} />
@@ -37,13 +37,13 @@ function ChooseFriend() {
       </div>
       <div className="mt-6 flex flex-row gap-8 text-center items-center justify-center">
         <div className="bg-red-300 p-4 rounded-xl pl-12 pr-12 flex gap-1 flex-col">
-          <h2 className='font-semibold pb-2'>الفريق الأول</h2>
+          <h2 className='font-semibold pb-2 text-sm'>الفريق الأول</h2>
           {teams.team1.map((friend, index) => (
             <p key={index}>{friend}</p>
           ))}
         </div>
         <div className="bg-violet-300 p-4 rounded-xl pl-12 pr-12 flex gap-1 flex-col">
-          <h2 className='font-semibold pb-2'>الفريق الثاني</h2>
+          <h2 className='font-semibold pb-2 text-sm'>الفريق الثاني</h2>
           {teams.team2.map((friend, index) => (
             <p key={index}>{friend}</p>
           ))}

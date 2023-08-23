@@ -18,6 +18,9 @@ function getRandomTeam(delay) {
 export default function Home() {
   const [firstTeam, setFirstTeam] = useState(Teams[0]);
   const [secondTeam, setSecondTeam] = useState(Teams[0]);
+  const [firstResult, setFirstResult] = useState(0);
+  const [secondResult, setSecondResult] = useState(0);
+
 
   async function setRandomTeam() {
     setFirstTeam("");
@@ -31,15 +34,29 @@ export default function Home() {
     setSecondTeam(randomTeam);
   }
 
+  function reset(){
+    setFirstResult(0);
+    setSecondResult(0)
+  }
+
+  function addfirstScore(){
+    setFirstResult(firstResult+1);
+  }
+
+  function addSecondScore(){
+    setSecondResult(secondResult+1);
+  }
+  
+
   return (
     <main className="flex min-h-screen flex-col items-center p-8">
-      <h1 className="text-lg font-bold">Choose Your Team</h1>
-      <div className="flex flex-col items-center gap-16 p-10 mt-4">
+      <h1 className="text-lg font-bold">اختر الفرق</h1>
+      <div className="flex flex-row items-center gap-3 p-10 mt-4">
         <div
           className="flex flex-col items-center rounded-md gap-6"
           id="FirstTeam"
         >
-          <h1 className="bg-black w-56 p-1 text-center text-white rounded-md">
+          <h1 className="bg-black w-40 p-1 text-center text-white rounded-md">
             {firstTeam.name}
           </h1>
           {firstTeam !== "" ? (
@@ -47,25 +64,30 @@ export default function Home() {
               <Image
                 height="200"
                 width="200"
-                className="h-44 w-auto"
+                className="h-32 w-auto"
                 src={firstTeam.picture}
                 alt="FirstPic"
               />
             </>
           ) : (
             <>
-              <Lottie className="h-64 w-auto" animationData={animationData} />
+              <Lottie className="h-36 w-auto" animationData={animationData} />
             </>
           )}
           <button
             className="bg-slate-200 p-2 pr-6 pl-6 rounded-lg"
             onClick={setRandomTeam}
           >
-            Random Pick
+            الفريق الأول
           </button>
         </div>
+        <div className="flex flex-row gap-4" id="Score">
+            <div className="font-bold text-2xl">{firstResult}</div>
+            <div> _ </div>
+            <div className="font-bold text-2xl">{secondResult}</div>
+        </div>
         <div className="flex flex-col items-center gap-6" id="SecondTeam">
-          <h1 className="bg-black w-56 text-center text-white rounded-md p-1">
+          <h1 className="bg-black w-40 text-center text-white rounded-md p-1">
             {secondTeam.name}
           </h1>
           {secondTeam !== "" ? (
@@ -73,23 +95,28 @@ export default function Home() {
               <Image
                 height="200"
                 width="200"
-                className="h-44 w-auto"
+                className="h-32 w-auto"
                 src={secondTeam.picture}
                 alt="FirstPic"
               />
             </>
           ) : (
             <>
-              <Lottie className="h-64 w-auto" animationData={animationData} />
+              <Lottie className="h-36 w-auto" animationData={animationData} />
             </>
           )}
           <button
             className="bg-slate-200 p-2 pr-6 pl-6 rounded-lg"
             onClick={setSecondRandomTeam}
           >
-            Random Pick
+            الفريق الثاني
           </button>
         </div>
+      </div>
+      <div className="flex flex-row gap-10">
+        <button onClick={addfirstScore} className="font-bold text-xl bg-slate-300 rounded-xl pr-4 pl-4">+</button>
+        <button onClick={reset} className="bg-slate-200 p-2 pr-6 pl-6 rounded-lg">اعادة النتيجة</button>
+        <button onClick={addSecondScore} className="font-bold text-xl bg-slate-300 rounded-xl pr-4 pl-4">+</button>
       </div>
     </main>
   );

@@ -60,7 +60,7 @@ export default function Home() {
           className="flex flex-col items-center rounded-md gap-6"
           id="FirstTeam"
         >
-          <h1 className="bg-black w-40 p-1 text-center text-white rounded-md text-sm">
+          <h1 className="bg-black w-36 p-1 text-center text-white rounded-md text-sm">
             {firstTeam.name}
           </h1>
           {firstTeam !== "" ? (
@@ -91,7 +91,7 @@ export default function Home() {
             <div className="font-bold text-xl">{secondResult}</div>
         </div>
         <div className="flex flex-col items-center gap-6" id="SecondTeam">
-          <h1 className="bg-black w-40 text-center text-white rounded-md p-1 text-sm">
+          <h1 className="bg-black w-36 text-center text-white rounded-md p-1 text-sm">
             {secondTeam.name}
           </h1>
           {secondTeam !== "" ? (

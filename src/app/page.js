@@ -4,6 +4,7 @@ import Image from "next/image";
 import Teams from "./Teams.json";
 import Lottie from "lottie-react";
 import animationData from "./animation_lljjzvj3.json";
+import ChooseFriend from "./ChooseFriend.js";
 
 function getRandomTeam(delay) {
   return new Promise((resolve) => {
@@ -50,8 +51,11 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center p-8">
-      <h1 className="text-lg font-bold">اختر الفرق</h1>
-      <div className="flex flex-row items-center gap-3 p-10 mt-4">
+      <div className="flex flex-row gap-44">
+        <h1 className="text-lg font-bold">الفريق الأول</h1>
+        <h1 className="text-lg font-bold">الفريق الثاني</h1>
+      </div>
+      <div className="flex flex-row items-center gap-2 p-10">
         <div
           className="flex flex-col items-center rounded-md gap-6"
           id="FirstTeam"
@@ -78,7 +82,7 @@ export default function Home() {
             className="bg-slate-200 p-2 pr-6 pl-6 rounded-lg"
             onClick={setRandomTeam}
           >
-            الفريق الأول
+            اختيار عشوائي
           </button>
         </div>
         <div className="flex flex-row gap-4" id="Score">
@@ -109,7 +113,7 @@ export default function Home() {
             className="bg-slate-200 p-2 pr-6 pl-6 rounded-lg"
             onClick={setSecondRandomTeam}
           >
-            الفريق الثاني
+            اختيار عشوائي
           </button>
         </div>
       </div>
@@ -118,6 +122,8 @@ export default function Home() {
         <button onClick={reset} className="bg-slate-200 p-2 pr-6 pl-6 rounded-lg">اعادة النتيجة</button>
         <button onClick={addSecondScore} className="font-bold text-xl bg-slate-300 rounded-xl pr-4 pl-4">+</button>
       </div>
+      {/* <ChooseStaduim/> */}
+      <ChooseFriend/>
     </main>
   );
 }

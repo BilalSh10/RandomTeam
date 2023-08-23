@@ -50,7 +50,7 @@ export default function Home() {
   
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-8">
+    <main className="flex min-h-screen flex-col items-center p-8 overflow-x-hidden">
       <div className="flex flex-row gap-44">
         <h1 className="text-lg font-bold">الفريق الأول</h1>
         <h1 className="text-lg font-bold">الفريق الثاني</h1>

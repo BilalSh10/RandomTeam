@@ -1,10 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import Teams from "./Teams.json";
+import Teams from "./Data/Teams.json";
 import Lottie from "lottie-react";
-import animationData from "./animation_lljjzvj3.json";
-import ChooseFriend from "./ChooseFriend.js";
+import animationData from "./animations/animation_lljjzvj3.json";
+import ChooseFriend from "./components/ChooseFriend.js";
 
 function getRandomTeam(delay) {
   return new Promise((resolve) => {
@@ -21,6 +21,23 @@ export default function Home() {
   const [secondTeam, setSecondTeam] = useState(Teams[0]);
   const [firstResult, setFirstResult] = useState(0);
   const [secondResult, setSecondResult] = useState(0);
+  const [firstResultColor, setFirstResultColor] = useState('text-black');
+  const [secondResultColor, setSecondResultColor] = useState('text-black');
+
+  useEffect(() => {
+    if(firstResult > secondResult){
+      setFirstResultColor('text-green-600');
+      setSecondResultColor('text-red-600');
+    }
+    else if(firstResult < secondResult){
+      setFirstResultColor('text-red-600');
+      setSecondResultColor('text-green-600');
+    }
+    else{
+      setFirstResultColor('text-black');
+      setSecondResultColor('text-black');
+    }
+  }, [firstResult, secondResult]);
 
 
   async function setRandomTeam() {
@@ -50,7 +67,7 @@ export default function Home() {
   
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-8 overflow-x-hidden">
+    <main className={`flex min-h-screen flex-col items-center p-8 overflow-x-hidden`}>
       <div className="flex flex-row gap-36">
         <h1 className="text-lg font-bold">الفريق الأول</h1>
         <h1 className="text-lg font-bold">الفريق الثاني</h1>
@@ -60,7 +77,7 @@ export default function Home() {
           className="flex flex-col items-center rounded-md gap-6"
           id="FirstTeam"
         >
-          <h1 className="bg-black w-36 p-1 text-center text-white rounded-md text-sm">
+          <h1 className={`bg-black w-36 p-1 text-center text-white rounded-md text-sm`}>
             {firstTeam.name}
           </h1>
           {firstTeam !== "" ? (
@@ -86,9 +103,9 @@ export default function Home() {
           </button>
         </div>
         <div className="flex flex-row gap-4" id="Score">
-            <div className="font-bold text-xl">{firstResult}</div>
+            <div className={`font-bold text-xl ${firstResultColor}`}>{firstResult}</div>
             <div> _ </div>
-            <div className="font-bold text-xl">{secondResult}</div>
+            <div className={`font-bold text-xl ${secondResultColor}`}>{secondResult}</div>
         </div>
         <div className="flex flex-col items-center gap-6" id="SecondTeam">
           <h1 className="bg-black w-36 text-center text-white rounded-md p-1 text-sm">
@@ -122,7 +139,6 @@ export default function Home() {
         <button onClick={reset} className="bg-slate-200 p-2 pr-6 pl-6 rounded-lg">اعادة النتيجة</button>
         <button onClick={addSecondScore} className="font-bold text-xl bg-slate-300 rounded-xl pr-4 pl-4">+</button>
       </div>
-      {/* <ChooseStaduim/> */}
       <ChooseFriend/>
     </main>
   );

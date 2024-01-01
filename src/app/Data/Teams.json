@@ -53,10 +53,6 @@
     "picture": "/images/Arsenal_FC.png"
   },
   {
-    "name": "Chelsea",
-    "picture": "/images/Chelsea.png"
-  },
-  {
     "name": "Tottenham",
     "picture": "/images/Tottenham_Hotspur.png"
   },
@@ -67,13 +63,5 @@
   {
     "name": "Roma",
     "picture": "/images/AS_Roma_logo_(2017).svg.png"
-  },
-  {
-    "name": "Al Hilal",
-    "picture": "/images/Al-Hilal-Logo.png"
-  },
-  {
-    "name": "Al Nassar",
-    "picture": "/images/Al_Nassr_FC.svg.png"
   }
 ]
